@@ -49,5 +49,24 @@ if __name__ == "__main__":
         else:
             # En caso de que el usuario no sea correcto,
             # no hace falta ya comprobar la contrasena.
-            # Le restamos un intento directamente.
+            # Le restamos un intento directamente y le hacemos
+            # saber sobre su error, y la cantidad de intentos
+            # restantes.
             INTENTOS = INTENTOS - 1
+            # \n significa salto de linea, aqui la usamos para
+            # mostrar el mensaje entre dos lineas blancas en consola.
+            # la variable INTENTOS esta entre llaves, para imprimirla
+            # en esa parte del mensaje, lo hacemos variable
+            # porque en cada iteracion, el numero se ira restando,
+            # y asi tenemos un mensaje personalizado cada vez
+            # la f al inicio es un requisito para poder utilizar
+            # el formato de una variable entre llaves {}
+            print(f'\n!! Usuario/Contraseña incorrecto(s), {INTENTOS} restantes !!\n')
+    # El programa llegara a este punto unicamente si la persona
+    # pudo ingresar correctamente usuario y contrasena, a partir de
+    # aqui, el programa queda a salvo de intrusos.
+    print(f"\n\n\nBienvenido! {USUARIO},\nPudiste recordar tu contrasena!")
+
+    print("Que te parece esta piramide?")
+    for x in range(15):
+        print(x*'ñ')
